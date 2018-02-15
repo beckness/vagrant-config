@@ -45,13 +45,13 @@ end
 vconfig.each_with_index do |(hostname, cfg), index|
 
   config.vm.define hostname do |config|
- 
-      config.vm.box = #{cfg[:type]}
+
+      config.vm.box = "#{cfg["type"]}"
       config.vm.hostname = hostname
-      config.vm.network "private_network", ip: "#{cfg[:ip]}"
+      config.vm.network "private_network", ip: "#{cfg["ip"]}"
       config.vm.provider "virtualbox" do |vb|
-       vb.cpus = "#{cfg[:cpus]}"
-       vb.memory = "#{cfg[:mem]}"
+       vb.cpus = "#{cfg["cpus"]}"
+       vb.memory = "#{cfg["mem"]}"
        vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
        vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
        vb.gui = false # change to true if you want console in virtualbox for debug

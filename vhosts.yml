@@ -1,10 +1,10 @@
 dev-prom: 
-  type: "ubuntu//xenial64"
+  type: "ubuntu/xenial64"
   ip: "172.16.1.10"
   cpus: 1
   mem: 1024
-dev-ansible:
-  type: "ubuntu//xenial64"
+ansible:
+  type: "ubuntu/xenial64"
   ip: "172.16.1.11"
   cpus: 1
   mem:  1024
